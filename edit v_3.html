@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8">
+    <title>PPM</title>
+    <style>
+      #jb-container {
+        width: 1200px;
+        margin: 0px auto;
+        padding: 20px;
+        border: 1px solid black;
+      }
+      #jb-header {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 1px solid black;
+      }
+      #jb-sidebar-left {
+        width: 250px;
+        padding: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        float: left;
+        border: 1px solid black;
+      }
+      #jb-content {
+        width: 500px;
+        padding: 20px;
+        margin-bottom: 20px;
+        float: left;
+        border: 1px solid black;
+      }
+      #jb-sidebar-right {
+        width: 250px;
+        padding: 20px;
+        margin-bottom: 20px;
+        float: right;
+        border: 1px solid black;
+      }
+      #jb-footer {
+        clear: both;
+        padding: 20px;
+        border: 1px solid black;
+      }
+   
+
+
+ </style>
+
+
+
+  </head>
+<script language='JavaScript' type='text/javascript'> 
+function layer_toggle(obj) {
+    if (obj.style.display=='none') obj.style.display = 'block';
+    else if (obj.style.display=='block') obj.style.display = 'none'; } 
+
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+       
+        <script type="text/javascript" src="date_time.js"></script>
+    
+</head>
+    <body>
+            <span id="date_time"></span>
+            <script type="text/javascript">window.onload = date_time('date_time');</script>
+    </body>
+  <body>
+    <div id="jb-container">
+      <div id="jb-header">
+        <h1>Presentaion Practice Mirror</h1>
+      </div>
+      <div id="jb-sidebar-left">
+        <h2>File</h2>
+  <p>watch recording file.</p>
+<p>recent file.</p>
+<video width="250" height="200" controls>
+  <source src="2517073251.webm" type="video/webm">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+<h2>Evaluation</h2>
+  <p>Evaluate your presentation.</p>
+ <p>If you don't have .xml files on your PC, please download file1&file2 first. </p>
+<a href="haarcascade_frontalface_alt.xml" download="1">file1<a/>
+<a href="haarcascade_lefteye_2splits.xml" download="1">file2<a/>
+ <p>Click here to execute evaluation file. It will give you some feedback.</p>
+ <input type="button" value="Start" onclick="window.open('D:/Project/OpenCVProject2.exe')"/>
+ 
+
+      </div>
+      <div id="jb-content">
+
+   </div>
+      <div id="jb-sidebar-right">
+          <h2>Speech</h2>
+  <p>Watch famous speech or presentaion.</p>
+  <!--REAL TIME UPDATE하거나 RECOMMENDED영상 두개정도?.--> 
+  <p>The image is a link to Steve Jobs' speech. You can click on it.</p>
+<iframe  float: left; width="250" height="200" src="https://www.youtube.com/embed/7aA17H-3Vig" frameborder="0" allowfullscreen></iframe>
+<h2>Script</h2>
+<p>Click here to download your presentation script.</p>
+<a href="test.txt" download="1"><input type="button" value="Script"><a/>
+<p>Click here to execute script and timer.</p>
+<input type="button" value="Rec" onclick="window.open('D:/Project/timerscript.exe')"/>
+<h2>Rec</h2>
+<div id="A" style="display: block;"> 
+<a onclick="layer_toggle(document.getElementById('A')); layer_toggle(document.getElementById('B')); return false;" href="#">OPEN</a>
+</div> 
+<div id="B" style="display: none;"> 
+<a onclick="layer_toggle(document.getElementById('A')); layer_toggle(document.getElementById('B')); return false;" href="#">CLOSE</a>
+
+<p>Send your presentation to your friends in real-time.</p>
+<a href= "http://apprtc.appspot.com">WebRTC chat</a>
+<p>Record your presentation in your PC</p>
+
+<iframe src="frame.html" width="250" height="300" frameborder="black" scrolling="no"></iframe>
+
+ 
+<a href= "https://www.webrtc-experiment.com/RecordRTC/">go to site</a>
+  
+    </div>
+</div>
+
+
+      <div id="jb-footer">
+<p>copyright</p>
+</div>
+       
+  </body>
+<body style="color: white; background-color: black;">
+
+</html>

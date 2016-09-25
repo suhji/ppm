@@ -1,0 +1,11 @@
+﻿  skindetect.cpp
+c:\users\광장\desktop\opencvproject2 0818 using webcam\opencvproject2\opencvproject2\skindetector.h(2): fatal error C1083: 포함 파일을 열 수 없습니다. 'opencv/cv.h': No such file or directory
+  main.cpp
+c:\users\광장\desktop\opencvproject2 0818 using webcam\opencvproject2\opencvproject2\main.cpp(1): fatal error C1083: 포함 파일을 열 수 없습니다. 'opencv2/objdetect/objdetect.hpp': No such file or directory
+  helpers.cpp
+c:\users\광장\desktop\opencvproject2 0818 using webcam\opencvproject2\opencvproject2\helpers.cpp(1): fatal error C1083: 포함 파일을 열 수 없습니다. 'opencv2/objdetect/objdetect.hpp': No such file or directory
+  findEyeCorner.cpp
+c:\users\광장\desktop\opencvproject2 0818 using webcam\opencvproject2\opencvproject2\findeyecorner.cpp(1): fatal error C1083: 포함 파일을 열 수 없습니다. 'opencv2/objdetect/objdetect.hpp': No such file or directory
+  findEyeCenter.cpp
+c:\users\광장\desktop\opencvproject2 0818 using webcam\opencvproject2\opencvproject2\findeyecenter.cpp(1): fatal error C1083: 포함 파일을 열 수 없습니다. 'opencv2/objdetect/objdetect.hpp': No such file or directory
+  코드를 생성하고 있습니다...
