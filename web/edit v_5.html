@@ -87,62 +87,22 @@ function ppmFunction() {
 
 <!--대본 시작-->
 <h1>Script</h1>
-<a href="test.txt" download="1"><input type="button" value="download Script"><a/>
-<input type="button" value="script&timer" onclick="window.open('D:/Project/timerscript.exe')"/>
+<a href="test.txt""timerscript.exe" download="1"><input type="button" value="download Script"><a/>
+<input type="button" value="script&timer" onclick="window.open('timerscript.exe')"/>
 
 <!--대본 끝-->
-
-<h1>File</h1>
- <p>watch recent file.</p>
-<video width="250" height="200" controls>
-  <source src="D:/Project/webm.mp4" type="video/mp4">
-  <source src="movie.ogg" type="video/ogg">.
-</video>
-
 <!--눈 깜빡임 시작-->
 <h1>Evaluation</h1>
   <p>Evaluate your presentation.</p>
- <p>If you don't have .xml files on your PC, please download this <a href="haarcascade_frontalface_alt.xml" download="1">file<a/> first. </p>
+ <p>If you don't have .xml files on your PC, please download this <a href="haarcascade_frontalface_alt.xml" download="1">file<a/> on C:/. </p>
 
  <p>Click here to execute evaluation file. It will give you some feedback.</p>
- <input type="button" value="Start" onclick="window.open('D:/Project/Blinkdetect.exe')"/>
+ <input type="button" value="Start" onclick="window.open('Blinkdetect.exe')"/>
 
-      </div>
-<!--눈 깜빡임 끝-->
+ <!--눈 깜빡임 끝-->
 
-<!--중간값 비워두기 시작-->
-      <div id="ppm-content">
-   </div>
-<!--중간값 비워두기 끝-->
-
-<!--오른쪽 라인 시작-->
-<div id="ppm-sidebar-right">
-<!--스피치 영상 시작--> 
-<h1>Speech</h1>
-  <p>Watch famous speech or presentaion.</p>
-<form method=get action="http://www.youtube.com/embed/results" target width="250" "height=200" >
-  <table bgcolor="black">
-    <tr>
-      <td>
-          <input type=text name=q size=25 maxlength=255 value="" />
-          <input type=hidden name=ie value=UTF-8 />
-          <input type=hidden name=oe value=UTF-8 />
-          <input type=hidden name=hl value=ko />
-          <input type=submit name=btnG value="search" />
-      </td>
-    </tr>
-  </table>
-</form>
-
-  <p>link to Steve Jobs' speech</p>
-<iframe  float: left; width="250" height="200" src="https://www.youtube.com/embed/7aA17H-3Vig" frameborder="0" allowfullscreen></iframe>
-<!--스피치 영상 끝-->
-
+<!--녹화영상 시작-->
 <h1>Rec</h1>
-<p>Send your presentation to your friends in real-time.</p>
-<a href= "http://apprtc.appspot.com">WebRTC chat</a>
-<p>Record your presentation in your PC</p>
-
 
  <script src="RecordRTC.js"></script>      
         <section class="experiment recordrtc">
@@ -460,7 +420,56 @@ function ppmFunction() {
                 };
             }
         </script>
+<!--녹화영상 끝-->
+
+<!--화상채팅 시작-->
+<p>Send your presentation to your friends in real-time.</p>
+<a href= "http://apprtc.appspot.com">WebRTC chat</a>
+<p>Record your presentation in your PC</p>
+<!--화상채팅 끝-->
+
     </div>
+
+
+
+
+
+<!--중간값 비워두기 시작-->
+      <div id="ppm-content">
+   </div>
+<!--중간값 비워두기 끝-->
+
+<!--오른쪽 라인 시작-->
+<div id="ppm-sidebar-right">
+<!--스피치 영상 시작--> 
+<h1>Speech</h1>
+  <p>Watch famous speech or presentaion.</p>
+<form method=get action="http://www.youtube.com/embed/results" target width="250" "height=200" >
+  <table bgcolor="black">
+    <tr>
+      <td>
+          <input type=text name=q size=25 maxlength=255 value="" />
+          <input type=hidden name=ie value=UTF-8 />
+          <input type=hidden name=oe value=UTF-8 />
+          <input type=hidden name=hl value=ko />
+          <input type=submit name=btnG value="search" />
+      </td>
+    </tr>
+  </table>
+</form>
+
+  <p>link to Steve Jobs' speech</p>
+<iframe  float: left; width="250" height="200" src="https://www.youtube.com/embed/7aA17H-3Vig" frameborder="0" allowfullscreen></iframe>
+<!--스피치 영상 끝-->
+
+
+<h1>File</h1>
+ <p>watch recent file.</p>
+<video width="250" height="200" controls>
+  <source src="D:/Project/recent.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">.
+</video>
+
 </div>
 
 
