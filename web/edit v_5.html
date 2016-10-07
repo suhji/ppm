@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8">
+    <title>PPM</title>
+<!-- -->
+<!--layout -->
+    <style>
+      #ppm-container {
+        width: 1200px;
+        margin: 0px auto;
+        padding: 20px;
+        border: 1px solid black;
+      }
+      #ppm-header {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 1px solid black;
+      }
+      #ppm-sidebar-left {
+        width: 250px;
+        padding: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        float: left;
+        border: 1px solid black;
+      }
+      #ppm-content {
+        width: 500px;
+        padding: 20px;
+        margin-bottom: 20px;
+        float: left;
+        border: 1px solid black;
+      }
+      #ppm-sidebar-right {
+        width: 250px;
+        padding: 20px;
+        margin-bottom: 20px;
+        float: right;
+        border: 1px solid black;
+      }
+      #ppm-footer {
+        clear: both;
+        padding: 20px;
+        border: 1px solid black;
+      }
+ </style>
+  </head>
+
+<!--현재 시각 시작 -->
+<script language='JavaScript' type='text/javascript'> 
+function layer_toggle(obj) {
+    if (obj.style.display=='none') obj.style.display = 'block';
+    else if (obj.style.display=='block') obj.style.display = 'none'; } 
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+               <script type="text/javascript" src="date_time.js"></script>
+   
+            <span id="date_time"></span>
+            <script type="text/javascript">window.onload = date_time('date_time');</script>
+<!--현재 시각 끝-->
+
+<body>
+<!--웹이름-->
+    <div id="ppm-container">
+
+        <h1>Presentaion Practice Mirror</h1>
+      </div>
+<!--웹이름-->
+
+<!--왼쪽라인 구성 시작-->
+<div id="ppm-sidebar-left">
+
+<!--타이머 시작-->
+<h1>Timer</h1>
+<button onclick="myVar = setTimeout(ppmFunction, 180000)">3min</button>
+<button onclick="myVar = setTimeout(ppmFunction, 300000)">5min</button>
+<button onclick="clearTimeout(myVar)">Stop</button>
+
+<script>
+function ppmFunction() {
+    alert("Time Over");
+}
+</script>
+<!--타이머 끝-->
+
+<!--대본 시작-->
+<h1>Script</h1>
+<a href="test.txt" download="1"><input type="button" value="download Script"><a/>
+<input type="button" value="script&timer" onclick="window.open('D:/Project/timerscript.exe')"/>
+
+<!--대본 끝-->
+
+<h1>File</h1>
+ <p>watch recent file.</p>
+<video width="250" height="200" controls>
+  <source src="D:/Project/webm.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">.
+</video>
+
+<!--눈 깜빡임 시작-->
+<h1>Evaluation</h1>
+  <p>Evaluate your presentation.</p>
+ <p>If you don't have .xml files on your PC, please download this <a href="haarcascade_frontalface_alt.xml" download="1">file<a/> first. </p>
+
+ <p>Click here to execute evaluation file. It will give you some feedback.</p>
+ <input type="button" value="Start" onclick="window.open('D:/Project/Blinkdetect.exe')"/>
+
+      </div>
+<!--눈 깜빡임 끝-->
+
+<!--중간값 비워두기 시작-->
+      <div id="ppm-content">
+   </div>
+<!--중간값 비워두기 끝-->
+
+<!--오른쪽 라인 시작-->
+<div id="ppm-sidebar-right">
+<!--스피치 영상 시작--> 
+<h1>Speech</h1>
+  <p>Watch famous speech or presentaion.</p>
+<form method=get action="http://www.youtube.com/embed/results" target width="250" "height=200" >
+  <table bgcolor="black">
+    <tr>
+      <td>
+          <input type=text name=q size=25 maxlength=255 value="" />
+          <input type=hidden name=ie value=UTF-8 />
+          <input type=hidden name=oe value=UTF-8 />
+          <input type=hidden name=hl value=ko />
+          <input type=submit name=btnG value="search" />
+      </td>
+    </tr>
+  </table>
+</form>
+
+  <p>link to Steve Jobs' speech</p>
+<iframe  float: left; width="250" height="200" src="https://www.youtube.com/embed/7aA17H-3Vig" frameborder="0" allowfullscreen></iframe>
+<!--스피치 영상 끝-->
+
+<h1>Rec</h1>
+<p>Send your presentation to your friends in real-time.</p>
+<a href= "http://apprtc.appspot.com">WebRTC chat</a>
+<p>Record your presentation in your PC</p>
+
+
+ <script src="RecordRTC.js"></script>      
+        <section class="experiment recordrtc">
+            <h2 class="header">
+                <select class="recording-media">
+              <option value="record-audio-plus-video">Video</option>
+                </select>
+                
+                into
+                <select class="media-container-format">
+
+                    <option>Mp4</option>
+                    <option>WAV</option>
+                </select>
+                
+                <button>Start Recording</button>
+            </h2>
+            
+            <div style="text-align: center; display: none;">
+                <button id="save-to-disk">Save To Disk</button>
+                <button id="open-new-tab">Open New Tab</button>
+            </div>
+            
+            <br>
+
+            <video controls muted></video>
+        </section>
+        
+        <script>
+            (function() {
+                var params = {},
+                    r = /([^&=]+)=?([^&]*)/g;
+
+                function d(s) {
+                    return decodeURIComponent(s.replace(/\+/g, ' '));
+                }
+
+                var match, search = window.location.search;
+                while (match = r.exec(search.substring(1))) {
+                    params[d(match[1])] = d(match[2]);
+
+                    if(d(match[2]) === 'true' || d(match[2]) === 'false') {
+                        params[d(match[1])] = d(match[2]) === 'true' ? true : false;
+                    }
+                }
+
+                window.params = params;
+            })();
+
+            function addStreamStopListener(stream, callback) {
+                var streamEndedEvent = 'ended';
+
+                if ('oninactive' in stream) {
+                    streamEndedEvent = 'inactive';
+                }
+
+                stream.addEventListener(streamEndedEvent, function() {
+                    callback();
+                    callback = function() {};
+                }, false);
+
+                stream.getAudioTracks().forEach(function(track) {
+                    track.addEventListener(streamEndedEvent, function() {
+                        callback();
+                        callback = function() {};
+                    }, false);
+                });
+
+                stream.getVideoTracks().forEach(function(track) {
+                    track.addEventListener(streamEndedEvent, function() {
+                        callback();
+                        callback = function() {};
+                    }, false);
+                });
+            }
+        </script>
+        
+        <script>
+         
+
+            var recordingDIV = document.querySelector('.recordrtc');
+            var recordingMedia = recordingDIV.querySelector('.recording-media');
+            var recordingPlayer = recordingDIV.querySelector('video');
+            var mediaContainerFormat = recordingDIV.querySelector('.media-container-format');
+            
+            window.onbeforeunload = function() {
+                recordingDIV.querySelector('button').disabled = false;
+                recordingMedia.disabled = false;
+                mediaContainerFormat.disabled = false;
+            };
+            
+            recordingDIV.querySelector('button').onclick = function() {
+                var button = this;
+
+                if(button.innerHTML === 'Stop Recording') {
+                    button.disabled = true;
+                    button.disableStateWaiting = true;
+                    setTimeout(function() {
+                        button.disabled = false;
+                        button.disableStateWaiting = false;
+                    }, 2 * 1000);
+                    
+                    button.innerHTML = 'Star Recording';
+
+                    function stopStream() {
+                        if(button.stream && button.stream.stop) {
+                            button.stream.stop();
+                            button.stream = null;
+                        }
+                    }
+                    
+                    if(button.recordRTC) {
+                        if(button.recordRTC.length) {
+                            button.recordRTC[0].stopRecording(function(url) {
+                                if(!button.recordRTC[1]) {
+                                    button.recordingEndedCallback(url);
+                                    stopStream();
+
+                                    saveToDiskOrOpenNewTab(button.recordRTC[0]);
+                                    return;
+                                }
+
+                                button.recordRTC[1].stopRecording(function(url) {
+                                    button.recordingEndedCallback(url);
+                                    stopStream();
+                                });
+                            });
+                        }
+                        else {
+                            button.recordRTC.stopRecording(function(url) {
+                                button.recordingEndedCallback(url);
+                                stopStream();
+
+                                saveToDiskOrOpenNewTab(button.recordRTC);
+                            });
+                        }
+                    }
+                    
+                    return;
+                }
+                
+                button.disabled = true;
+                
+                var commonConfig = {
+                    onMediaCaptured: function(stream) {
+                        button.stream = stream;
+                        if(button.mediaCapturedCallback) {
+                            button.mediaCapturedCallback();
+                        }
+
+                        button.innerHTML = 'Stop Recording';
+                        button.disabled = false;
+                    },
+                    onMediaStopped: function() {
+                        button.innerHTML = 'Start Recording';
+                        
+                        if(!button.disableStateWaiting) {
+                            button.disabled = false;
+                        }
+                    },
+                    onMediaCapturingFailed: function(error) {
+                        if(error.name === 'PermissionDeniedError' && !!navigator.mozGetUserMedia) {
+                            intallFirefoxScreenCapturingExtension();
+                        }
+                        
+                        commonConfig.onMediaStopped();
+                    }
+                };
+
+                var mimeType = 'video/mp4';
+                if(mediaContainerFormat.value === 'Mp4') {
+                    mimeType = 'video/mp4';
+                }
+                if(mediaContainerFormat.value === 'WAV') {
+                    mimeType = 'video/wav';
+                }
+                
+
+                if(recordingMedia.value === 'record-audio-plus-video') {
+                    captureAudioPlusVideo(commonConfig);
+                    
+                    button.mediaCapturedCallback = function() {
+
+                        if(typeof MediaRecorder === 'undefined') { // opera or chrome etc.
+                            button.recordRTC = [];
+
+                            if(!params.bufferSize) {
+                                // it fixes audio issues whilst recording 720p
+                                params.bufferSize = 16384;
+                            }
+
+                            var options = {
+                                type: 'audio',
+                                bufferSize: typeof params.bufferSize == 'undefined' ? 0 : parseInt(params.bufferSize),
+                                sampleRate: typeof params.sampleRate == 'undefined' ? 44100 : parseInt(params.sampleRate),
+                                leftChannel: params.leftChannel || false,
+                                disableLogs: params.disableLogs || false,
+                                recorderType: webrtcDetectedBrowser === 'edge' ? StereoAudioRecorder : null
+                            };
+
+                            if(typeof params.sampleRate == 'undefined') {
+                                delete options.sampleRate;
+                            }
+
+                            var audioRecorder = RecordRTC(button.stream, options);
+
+                            var videoRecorder = RecordRTC(button.stream, {
+                                type: 'video',
+                                disableLogs: params.disableLogs || false,
+                                canvas: {
+                                    width: params.canvas_width || 250,
+                                    height: params.canvas_height || 200
+                                },
+                                frameInterval: typeof params.frameInterval !== 'undefined' ? parseInt(params.frameInterval) : 20 // minimum time between pushing frames to Whammy (in milliseconds)
+                            });
+
+                            // to sync audio/video playbacks in browser!
+                            videoRecorder.initRecorder(function() {
+                                audioRecorder.initRecorder(function() {
+                                    audioRecorder.startRecording();
+                                    videoRecorder.startRecording();
+                                });
+                            });
+
+                            button.recordRTC.push(audioRecorder, videoRecorder);
+
+                            button.recordingEndedCallback = function() {
+                                var audio = new Audio();
+                                audio.src = audioRecorder.toURL();
+                                audio.controls = true;
+                                audio.autoplay = true;
+
+                                audio.onloadedmetadata = function() {
+                                    recordingPlayer.src = videoRecorder.toURL();
+                                    recordingPlayer.play();
+                                };
+
+                                recordingPlayer.parentNode.appendChild(document.createElement('hr'));
+                                recordingPlayer.parentNode.appendChild(audio);
+
+                                if(audio.paused) audio.play();
+                            };
+                            return;
+                        }
+
+                        button.recordRTC = RecordRTC(button.stream, {
+                            type: 'video',
+                            mimeType: mimeType,
+                            disableLogs: params.disableLogs || false,
+                            // bitsPerSecond: 25 * 8 * 1025 // 25 kbits/s
+                            getNativeBlob: false // enable it for longer recordings
+                        });
+                        
+                        button.recordingEndedCallback = function(url) {
+                            recordingPlayer.muted = false;
+                            recordingPlayer.removeAttribute('muted');
+                            recordingPlayer.src = url;
+                            recordingPlayer.play();
+
+                            recordingPlayer.onended = function() {
+                                recordingPlayer.pause();
+                                recordingPlayer.src = URL.createObjectURL(button.recordRTC.blob);
+                            };
+                        };
+                        
+                        button.recordRTC.startRecording();
+                    };
+                }
+                
+              }
+            
+            
+            function captureAudioPlusVideo(config) {
+                captureUserMedia({video: true, audio: true}, function(audioVideoStream) {
+                    recordingPlayer.srcObject = audioVideoStream;
+                    recordingPlayer.play();
+                    
+                    config.onMediaCaptured(audioVideoStream);
+                    
+                    addStreamStopListener(audioVideoStream, function() {
+                        config.onMediaStopped();
+                    });
+                }, function(error) {
+                    config.onMediaCapturingFailed(error);
+                });
+            }
+            
+       
+
+               function captureUserMedia(mediaConstraints, successCallback, errorCallback) {
+                var isBlackBerry = !!(/BB10|BlackBerry/i.test(navigator.userAgent || ''));
+                if(isBlackBerry && !!(navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia)) {
+                    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+                    navigator.getUserMedia(mediaConstraints, successCallback, errorCallback);
+                    return;
+                }
+
+                navigator.mediaDevices.getUserMedia(mediaConstraints).then(successCallback).catch(errorCallback);
+            }
+            
+  
+          
+            function saveToDiskOrOpenNewTab(recordRTC) {
+                recordingDIV.querySelector('#save-to-disk').parentNode.style.display = 'block';
+                recordingDIV.querySelector('#save-to-disk').onclick = function() {
+                    if(!recordRTC) return alert('No recording found.');
+                    
+                    recordRTC.save();
+                };
+                
+                recordingDIV.querySelector('#open-new-tab').onclick = function() {
+                    if(!recordRTC) return alert('No recording found.');
+                    
+                    window.open(recordRTC.toURL());
+                };
+            }
+        </script>
+    </div>
+</div>
+
+
+      <div id="ppm-footer">
+<div id="A" style="display: block;"> 
+<a onclick="layer_toggle(document.getElementById('A')); layer_toggle(document.getElementById('B')); return false;" href="#">OPEN</a>
+</div> 
+<div id="B" style="display: none;"> 
+<a onclick="layer_toggle(document.getElementById('A')); layer_toggle(document.getElementById('B')); return false;" href="#">CLOSE</a>
+
+
+
+<p>Suh, Han, Fundi</p>
+</div>
+       
+  </body>
+<body style="color: white; background-color: black;">
+
+</html>
